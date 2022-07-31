@@ -7,6 +7,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.sql.Timestamp;
 
 @Entity
@@ -20,6 +21,7 @@ public class RuleName {
     @SequenceGenerator(name = "rulename_gen", sequenceName = "rulename_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "rulename_gen")
     private Integer id;
+    @NotBlank(message = "Name is mandatory")
     private String name;
     private String description;
     private String json;

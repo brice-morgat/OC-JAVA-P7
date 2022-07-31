@@ -7,12 +7,14 @@ C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\impl\BidServiceImpl.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\BidListRepository.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\RuleNameController.java
+C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\IRuleNameService.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\Rating.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\Trade.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\LoginController.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\CurvePointRepository.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\Application.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\CurveController.java
+C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\impl\RuleNameServiceImpl.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\UserRepository.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\IRatingService.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\RatingController.java

@@ -5,7 +5,6 @@ import com.nnk.springboot.domain.CurvePoint;
 import java.util.List;
 
 public interface ICurvePointService {
-
     /**
      * Save a CurvePoint object to the database.
      *
