@@ -66,37 +66,38 @@ import javax.validation.Valid;
 <span class="fc" id="L66">            logger.error(&quot;Error : &quot; + e.getMessage());</span>
 <span class="fc" id="L67">            model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
 <span class="fc" id="L68">            return &quot;redirect:/rating/list&quot;;</span>
-        }    }
+        }
+    }
 
     @PostMapping(&quot;/rating/update/{id}&quot;)
     public String updateRating(@PathVariable(&quot;id&quot;) Integer id, @Valid Rating rating,
                              BindingResult result, Model model) {
-<span class="fc" id="L74">        logger.debug(&quot;Update Rating&quot;);</span>
-<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
+<span class="fc" id="L75">        logger.debug(&quot;Update Rating&quot;);</span>
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
             try {
-<span class="fc" id="L77">                ratingService.saveRating(rating);</span>
-<span class="fc" id="L78">                logger.info(&quot;Rating has been updated&quot;);</span>
-<span class="fc" id="L79">                return &quot;redirect:/rating/list&quot;;</span>
-<span class="fc" id="L80">            } catch (Exception e) {</span>
-<span class="fc" id="L81">                logger.error(&quot;Error : &quot; + e.getMessage());</span>
-<span class="fc" id="L82">                model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
-<span class="fc" id="L83">                return &quot;error&quot;;</span>
+<span class="fc" id="L78">                ratingService.saveRating(rating);</span>
+<span class="fc" id="L79">                logger.info(&quot;Rating has been updated&quot;);</span>
+<span class="fc" id="L80">                return &quot;redirect:/rating/list&quot;;</span>
+<span class="fc" id="L81">            } catch (Exception e) {</span>
+<span class="fc" id="L82">                logger.error(&quot;Error : &quot; + e.getMessage());</span>
+<span class="fc" id="L83">                model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
+<span class="fc" id="L84">                return &quot;error&quot;;</span>
             }
         }
-<span class="fc" id="L86">        return &quot;rating/update&quot;;</span>
+<span class="fc" id="L87">        return &quot;rating/update&quot;;</span>
     }
 
     @GetMapping(&quot;/rating/delete/{id}&quot;)
     public String deleteRating(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-<span class="fc" id="L91">        logger.debug(&quot;Delete rating by id&quot;);</span>
+<span class="fc" id="L92">        logger.debug(&quot;Delete rating by id&quot;);</span>
         try {
-<span class="fc" id="L93">            Rating rating = ratingService.getRatingById(id);</span>
-<span class="fc" id="L94">            ratingService.deleteRating(rating);</span>
-<span class="fc" id="L95">            logger.info(&quot;Rating has been deleted&quot;);</span>
-<span class="fc" id="L96">            return &quot;redirect:/rating/list&quot;;</span>
-<span class="fc" id="L97">        } catch (Exception e) {</span>
-<span class="fc" id="L98">            model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
-<span class="fc" id="L99">            return &quot;error&quot;;</span>
+<span class="fc" id="L94">            Rating rating = ratingService.getRatingById(id);</span>
+<span class="fc" id="L95">            ratingService.deleteRating(rating);</span>
+<span class="fc" id="L96">            logger.info(&quot;Rating has been deleted&quot;);</span>
+<span class="fc" id="L97">            return &quot;redirect:/rating/list&quot;;</span>
+<span class="fc" id="L98">        } catch (Exception e) {</span>
+<span class="fc" id="L99">            model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
+<span class="fc" id="L100">            return &quot;error&quot;;</span>
         }
     }
 }

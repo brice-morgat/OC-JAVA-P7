@@ -66,7 +66,8 @@ public class RatingController {
             logger.error("Error : " + e.getMessage());
             model.addAttribute("errorMsg", e.getMessage());
             return "redirect:/rating/list";
-        }    }
+        }
+    }
 
     @PostMapping("/rating/update/{id}")
     public String updateRating(@PathVariable("id") Integer id, @Valid Rating rating,

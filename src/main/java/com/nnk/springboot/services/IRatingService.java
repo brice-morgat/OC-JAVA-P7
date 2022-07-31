@@ -5,7 +5,6 @@ import com.nnk.springboot.domain.Rating;
 import java.util.List;
 
 public interface IRatingService {
-
     /**
      * Save a rating.
      *

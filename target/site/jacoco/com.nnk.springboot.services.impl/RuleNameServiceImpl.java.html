@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RuleNameServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-boot-skeleton</a> &gt; <a href="index.source.html" class="el_package">com.nnk.springboot.services.impl</a> &gt; <span class="el_source">RuleNameServiceImpl.java</span></div><h1>RuleNameServiceImpl.java</h1><pre class="source lang-java linenums">package com.nnk.springboot.services.impl;
+
+import com.nnk.springboot.domain.RuleName;
+import com.nnk.springboot.exceptions.InvalidInputException;
+import com.nnk.springboot.repositories.RuleNameRepository;
+import com.nnk.springboot.services.IRuleNameService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Objects;
+
+@Service
+<span class="fc" id="L14">public class RuleNameServiceImpl implements IRuleNameService {</span>
+    @Autowired
+    private RuleNameRepository ruleNameRepository;
+
+    @Override
+    public RuleName saveRuleName(RuleName ruleName) {
+<span class="fc" id="L20">        Objects.requireNonNull(ruleName);</span>
+<span class="fc bfc" id="L21" title="All 2 branches covered.">        if (ruleName.getName() == null) {</span>
+<span class="fc" id="L22">            throw new InvalidInputException(&quot;Rule name must not be null&quot;);</span>
+        }
+<span class="fc" id="L24">        return ruleNameRepository.save(ruleName);</span>
+    }
+
+    @Override
+    public void deleteRuleName(RuleName ruleName) {
+<span class="fc" id="L29">        Objects.requireNonNull(ruleName);</span>
+<span class="fc" id="L30">        ruleNameRepository.delete(ruleName);</span>
+<span class="fc" id="L31">    }</span>
+
+    @Override
+    public List&lt;RuleName&gt; getAllRuleName() {
+<span class="fc" id="L35">        return ruleNameRepository.findAll();</span>
+    }
+
+    @Override
+    public RuleName getRuleNameById(Integer id) {
+<span class="fc" id="L40">        RuleName ruleName = ruleNameRepository.getById(id);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if (ruleName != null) {</span>
+<span class="fc" id="L42">            return ruleName;</span>
+        }
+<span class="nc" id="L44">        throw new InvalidInputException(&quot;RuleName not Found&quot;);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
