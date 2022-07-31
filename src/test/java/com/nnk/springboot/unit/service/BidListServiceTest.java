@@ -98,7 +98,7 @@ public class BidListServiceTest {
         //Given
         BidList bidList = new BidList("account", "type", 1d);
         //When
-        when(bidService.getBidListById(anyInt())).thenReturn(bidList);
+        when(bidListRepository.getById(anyInt())).thenReturn(bidList);
         //Then
         assertEquals(bidService.getBidListById(1), bidList);
     }

@@ -1,6 +1,10 @@
 package com.nnk.springboot.controllers;
 
 import com.nnk.springboot.domain.CurvePoint;
+import com.nnk.springboot.services.ICurvePointService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,41 +18,90 @@ import javax.validation.Valid;
 @Controller
 public class CurveController {
     // TODO: Inject Curve Point service
+    final Logger logger = LoggerFactory.getLogger(CurveController.class);
+
+    @Autowired
+    private ICurvePointService curvePointService;
 
     @RequestMapping("/curvePoint/list")
     public String home(Model model)
     {
-        // TODO: find all Curve Point, add to model
+        logger.debug("CurvePoint List page");
+        model.addAttribute("curvePoint", curvePointService.getAllCurvePoint());
+        logger.info("CurvePoint's List getted");
         return "curvePoint/list";
     }
 
     @GetMapping("/curvePoint/add")
     public String addBidForm(CurvePoint bid) {
+        logger.debug("Show CurvePoint Form");
         return "curvePoint/add";
     }
 
     @PostMapping("/curvePoint/validate")
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
         // TODO: check data valid and save to db, after saving return Curve list
+        logger.debug("Add a CurvePoint");
+        if (!result.hasErrors()) {
+            try {
+                curvePointService.saveCurvePoint(curvePoint);
+                logger.info("CurvePoint has been saved");
+                return "redirect:/curvePoint/list";
+            } catch (Exception e) {
+                model.addAttribute("errorMsg", e.getMessage());
+                logger.error("Error : " + e.getMessage());
+                return "error";
+            }
+        }
         return "curvePoint/add";
     }
 
     @GetMapping("/curvePoint/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
         // TODO: get CurvePoint by Id and to model then show to the form
-        return "curvePoint/update";
+        logger.debug("Show CurvePoint's Form");
+        try {
+            model.addAttribute("curvePoint", curvePointService.getCurvePointById(id));
+            logger.info("CurvePoint has been getting");
+            return "curvePoint/update";
+        } catch (Exception e) {
+            logger.error("Error : " + e.getMessage());
+            model.addAttribute("errorMsg", e.getMessage());
+            return "redirect:/curvePoint/list";
+        }
     }
 
     @PostMapping("/curvePoint/update/{id}")
     public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
                              BindingResult result, Model model) {
         // TODO: check required fields, if valid call service to update Curve and return Curve list
-        return "redirect:/curvePoint/list";
+        logger.debug("Update CurvePoint");
+        if (!result.hasErrors()) {
+            try {
+                curvePointService.saveCurvePoint(curvePoint);
+                logger.info("CurvePoint has been updated");
+                return "redirect:/curvePoint/list";
+            } catch (Exception e) {
+                logger.error("Error : " + e.getMessage());
+                model.addAttribute("errorMsg", e.getMessage());
+                return "error";
+            }
+        }
+        return "curvePoint/update";
     }
 
     @GetMapping("/curvePoint/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
         // TODO: Find Curve by Id and delete the Curve, return to Curve list
-        return "redirect:/curvePoint/list";
+        logger.debug("Delete curvePoint by id");
+        try {
+            CurvePoint curvePoint = curvePointService.getCurvePointById(id);
+            curvePointService.deleteCurvePoint(curvePoint);
+            logger.info("CurvePoint has been deleted");
+            return "redirect:/curvePoint/list";
+        } catch (Exception e) {
+            model.addAttribute("errorMsg", e.getMessage());
+            return "error";
+        }
     }
 }
