@@ -44,6 +44,4 @@ public class BidServiceImpl implements IBidService {
         }
         throw new InvalidInputException("BidList not Found");
     }
-
-
 }

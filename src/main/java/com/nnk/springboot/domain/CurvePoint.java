@@ -23,6 +23,7 @@ public class CurvePoint {
     @SequenceGenerator(name = "curvepoint_gen", sequenceName = "curvepoint_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "curvepoint_gen")
     private Integer id;
+    @NotNull(message = "must not be null")
     private Integer curveId;
     private Timestamp asOfDate;
     private Double term;
