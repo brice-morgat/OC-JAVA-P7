@@ -1,8 +1,6 @@
 
 e
 5src/main/java/com/nnk/springboot/domain/RuleName.java,c\0\c0046854ae7422e7bb1577986e0c3e5131c64bc5
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 q
 Asrc/main/java/com/nnk/springboot/repositories/UserRepository.java,4\6\468789ec0975a905bb13bdf6af7782c60c3ee995
 q
