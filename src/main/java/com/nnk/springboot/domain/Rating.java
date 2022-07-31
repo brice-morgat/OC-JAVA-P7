@@ -30,6 +30,7 @@ public class Rating {
     private String moodysRating;
     private String sandPRating;
     private String fitchRating;
+    @NotNull(message = "Order Number is mandatory")
     private Integer orderNumber;
 
     public Rating(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {

@@ -17,7 +17,6 @@ import javax.validation.Valid;
 
 @Controller
 public class CurveController {
-    // TODO: Inject Curve Point service
     final Logger logger = LoggerFactory.getLogger(CurveController.class);
 
     @Autowired
@@ -40,7 +39,6 @@ public class CurveController {
 
     @PostMapping("/curvePoint/validate")
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Curve list
         logger.debug("Add a CurvePoint");
         if (!result.hasErrors()) {
             try {
@@ -58,7 +56,6 @@ public class CurveController {
 
     @GetMapping("/curvePoint/update/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get CurvePoint by Id and to model then show to the form
         logger.debug("Show CurvePoint's Form");
         try {
             model.addAttribute("curvePoint", curvePointService.getCurvePointById(id));
@@ -74,7 +71,6 @@ public class CurveController {
     @PostMapping("/curvePoint/update/{id}")
     public String updateBid(@PathVariable("id") Integer id, @Valid CurvePoint curvePoint,
                              BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Curve and return Curve list
         logger.debug("Update CurvePoint");
         if (!result.hasErrors()) {
             try {
@@ -92,7 +88,6 @@ public class CurveController {
 
     @GetMapping("/curvePoint/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find Curve by Id and delete the Curve, return to Curve list
         logger.debug("Delete curvePoint by id");
         try {
             CurvePoint curvePoint = curvePointService.getCurvePointById(id);

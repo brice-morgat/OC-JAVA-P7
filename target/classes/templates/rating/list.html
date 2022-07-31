@@ -39,6 +39,19 @@
 			</thead>
 			<tbody>
 			<!-- TODO: Show all Rating to the table, the Action column will have Edit & Delete buttons -->
+			<tr th:each="rate : ${rating}">
+				<th th:text="${rate.getId()}">Id</th>
+				<th th:text="${rate.getMoodysRating()}">MoodysRating</th>
+				<th th:text="${rate.getSandPRating()}">SandPRating</th>
+				<th th:text="${rate.getFitchRating()}">FitchRating</th>
+				<th th:text="${rate.getOrderNumber()}">Order</th>
+				<th>
+					<a th:href="@{'/rating/update/'+${rate.getId()}}">Edit</a>
+					<span>|</span>
+					<a th:href="@{'/rating/delete/'+${rate.getId()}}">Remove</a>
+				</th>
+			</tr>
+			</tbody>
 			</tbody>
 		</table>
 	</div>
