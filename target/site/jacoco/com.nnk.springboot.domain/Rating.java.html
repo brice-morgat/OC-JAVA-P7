@@ -20,23 +20,24 @@ import java.sql.Timestamp;
 @Getter
 <span class="pc" id="L21">@Setter</span>
 <span class="fc" id="L22">@NoArgsConstructor</span>
-<span class="nc" id="L23">@ToString</span>
+<span class="fc" id="L23">@ToString</span>
 @Table(name = &quot;rating&quot;)
 public class Rating {
     @Id
     @SequenceGenerator(name = &quot;rating_gen&quot;, sequenceName = &quot;rating_id_seq&quot;, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = &quot;rating_gen&quot;)
 <span class="fc" id="L29">    private Integer id;</span>
-<span class="nc" id="L30">    private String moodysRating;</span>
-<span class="nc" id="L31">    private String sandPRating;</span>
-<span class="nc" id="L32">    private String fitchRating;</span>
-<span class="fc" id="L33">    private Integer orderNumber;</span>
+<span class="fc" id="L30">    private String moodysRating;</span>
+<span class="fc" id="L31">    private String sandPRating;</span>
+<span class="fc" id="L32">    private String fitchRating;</span>
+    @NotNull(message = &quot;Order Number is mandatory&quot;)
+<span class="fc" id="L34">    private Integer orderNumber;</span>
 
-<span class="fc" id="L35">    public Rating(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {</span>
-<span class="fc" id="L36">        this.moodysRating = moodysRating;</span>
-<span class="fc" id="L37">        this.sandPRating = sandPRating;</span>
-<span class="fc" id="L38">        this.fitchRating = fitchRating;</span>
-<span class="fc" id="L39">        this.orderNumber = orderNumber;</span>
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L36">    public Rating(String moodysRating, String sandPRating, String fitchRating, Integer orderNumber) {</span>
+<span class="fc" id="L37">        this.moodysRating = moodysRating;</span>
+<span class="fc" id="L38">        this.sandPRating = sandPRating;</span>
+<span class="fc" id="L39">        this.fitchRating = fitchRating;</span>
+<span class="fc" id="L40">        this.orderNumber = orderNumber;</span>
+<span class="fc" id="L41">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

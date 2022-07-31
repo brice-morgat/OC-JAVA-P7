@@ -17,8 +17,7 @@ import javax.validation.Valid;
 
 @Controller
 <span class="fc" id="L19">public class CurveController {</span>
-    // TODO: Inject Curve Point service
-<span class="fc" id="L21">    final Logger logger = LoggerFactory.getLogger(CurveController.class);</span>
+<span class="fc" id="L20">    final Logger logger = LoggerFactory.getLogger(CurveController.class);</span>
 
     @Autowired
     private ICurvePointService curvePointService;
@@ -26,82 +25,78 @@ import javax.validation.Valid;
     @RequestMapping(&quot;/curvePoint/list&quot;)
     public String home(Model model)
     {
-<span class="fc" id="L29">        logger.debug(&quot;CurvePoint List page&quot;);</span>
-<span class="fc" id="L30">        model.addAttribute(&quot;curvePoint&quot;, curvePointService.getAllCurvePoint());</span>
-<span class="fc" id="L31">        logger.info(&quot;CurvePoint's List getted&quot;);</span>
-<span class="fc" id="L32">        return &quot;curvePoint/list&quot;;</span>
+<span class="fc" id="L28">        logger.debug(&quot;CurvePoint List page&quot;);</span>
+<span class="fc" id="L29">        model.addAttribute(&quot;curvePoint&quot;, curvePointService.getAllCurvePoint());</span>
+<span class="fc" id="L30">        logger.info(&quot;CurvePoint's List getted&quot;);</span>
+<span class="fc" id="L31">        return &quot;curvePoint/list&quot;;</span>
     }
 
     @GetMapping(&quot;/curvePoint/add&quot;)
     public String addBidForm(CurvePoint bid) {
-<span class="fc" id="L37">        logger.debug(&quot;Show CurvePoint Form&quot;);</span>
-<span class="fc" id="L38">        return &quot;curvePoint/add&quot;;</span>
+<span class="fc" id="L36">        logger.debug(&quot;Show CurvePoint Form&quot;);</span>
+<span class="fc" id="L37">        return &quot;curvePoint/add&quot;;</span>
     }
 
     @PostMapping(&quot;/curvePoint/validate&quot;)
     public String validate(@Valid CurvePoint curvePoint, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return Curve list
-<span class="fc" id="L44">        logger.debug(&quot;Add a CurvePoint&quot;);</span>
-<span class="fc bfc" id="L45" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
+<span class="fc" id="L42">        logger.debug(&quot;Add a CurvePoint&quot;);</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
             try {
-<span class="fc" id="L47">                curvePointService.saveCurvePoint(curvePoint);</span>
-<span class="fc" id="L48">                logger.info(&quot;CurvePoint has been saved&quot;);</span>
-<span class="fc" id="L49">                return &quot;redirect:/curvePoint/list&quot;;</span>
-<span class="fc" id="L50">            } catch (Exception e) {</span>
-<span class="fc" id="L51">                model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
-<span class="fc" id="L52">                logger.error(&quot;Error : &quot; + e.getMessage());</span>
-<span class="fc" id="L53">                return &quot;error&quot;;</span>
+<span class="fc" id="L45">                curvePointService.saveCurvePoint(curvePoint);</span>
+<span class="fc" id="L46">                logger.info(&quot;CurvePoint has been saved&quot;);</span>
+<span class="fc" id="L47">                return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L48">            } catch (Exception e) {</span>
+<span class="fc" id="L49">                model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
+<span class="fc" id="L50">                logger.error(&quot;Error : &quot; + e.getMessage());</span>
+<span class="fc" id="L51">                return &quot;error&quot;;</span>
             }
         }
-<span class="fc" id="L56">        return &quot;curvePoint/add&quot;;</span>
+<span class="fc" id="L54">        return &quot;curvePoint/add&quot;;</span>
     }
 
     @GetMapping(&quot;/curvePoint/update/{id}&quot;)
     public String showUpdateForm(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-        // TODO: get CurvePoint by Id and to model then show to the form
-<span class="fc" id="L62">        logger.debug(&quot;Show CurvePoint's Form&quot;);</span>
+<span class="fc" id="L59">        logger.debug(&quot;Show CurvePoint's Form&quot;);</span>
         try {
-<span class="fc" id="L64">            model.addAttribute(&quot;curvePoint&quot;, curvePointService.getCurvePointById(id));</span>
-<span class="fc" id="L65">            logger.info(&quot;CurvePoint has been getting&quot;);</span>
-<span class="fc" id="L66">            return &quot;curvePoint/update&quot;;</span>
-<span class="fc" id="L67">        } catch (Exception e) {</span>
-<span class="fc" id="L68">            logger.error(&quot;Error : &quot; + e.getMessage());</span>
-<span class="fc" id="L69">            model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
-<span class="fc" id="L70">            return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L61">            model.addAttribute(&quot;curvePoint&quot;, curvePointService.getCurvePointById(id));</span>
+<span class="fc" id="L62">            logger.info(&quot;CurvePoint has been getting&quot;);</span>
+<span class="fc" id="L63">            return &quot;curvePoint/update&quot;;</span>
+<span class="fc" id="L64">        } catch (Exception e) {</span>
+<span class="fc" id="L65">            logger.error(&quot;Error : &quot; + e.getMessage());</span>
+<span class="fc" id="L66">            model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
+<span class="fc" id="L67">            return &quot;redirect:/curvePoint/list&quot;;</span>
         }
     }
 
     @PostMapping(&quot;/curvePoint/update/{id}&quot;)
     public String updateBid(@PathVariable(&quot;id&quot;) Integer id, @Valid CurvePoint curvePoint,
                              BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update Curve and return Curve list
-<span class="fc" id="L78">        logger.debug(&quot;Update CurvePoint&quot;);</span>
-<span class="fc bfc" id="L79" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
+<span class="fc" id="L74">        logger.debug(&quot;Update CurvePoint&quot;);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        if (!result.hasErrors()) {</span>
             try {
-<span class="fc" id="L81">                curvePointService.saveCurvePoint(curvePoint);</span>
-<span class="fc" id="L82">                logger.info(&quot;CurvePoint has been updated&quot;);</span>
-<span class="fc" id="L83">                return &quot;redirect:/curvePoint/list&quot;;</span>
-<span class="fc" id="L84">            } catch (Exception e) {</span>
-<span class="fc" id="L85">                logger.error(&quot;Error : &quot; + e.getMessage());</span>
-<span class="fc" id="L86">                model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
-<span class="fc" id="L87">                return &quot;error&quot;;</span>
+<span class="fc" id="L77">                curvePointService.saveCurvePoint(curvePoint);</span>
+<span class="fc" id="L78">                logger.info(&quot;CurvePoint has been updated&quot;);</span>
+<span class="fc" id="L79">                return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L80">            } catch (Exception e) {</span>
+<span class="fc" id="L81">                logger.error(&quot;Error : &quot; + e.getMessage());</span>
+<span class="fc" id="L82">                model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
+<span class="fc" id="L83">                return &quot;error&quot;;</span>
             }
         }
-<span class="fc" id="L90">        return &quot;curvePoint/update&quot;;</span>
+<span class="fc" id="L86">        return &quot;curvePoint/update&quot;;</span>
     }
 
     @GetMapping(&quot;/curvePoint/delete/{id}&quot;)
     public String deleteBid(@PathVariable(&quot;id&quot;) Integer id, Model model) {
-        // TODO: Find Curve by Id and delete the Curve, return to Curve list
-<span class="fc" id="L96">        logger.debug(&quot;Delete curvePoint by id&quot;);</span>
+<span class="fc" id="L91">        logger.debug(&quot;Delete curvePoint by id&quot;);</span>
         try {
-<span class="fc" id="L98">            CurvePoint curvePoint = curvePointService.getCurvePointById(id);</span>
-<span class="fc" id="L99">            curvePointService.deleteCurvePoint(curvePoint);</span>
-<span class="fc" id="L100">            logger.info(&quot;CurvePoint has been deleted&quot;);</span>
-<span class="fc" id="L101">            return &quot;redirect:/curvePoint/list&quot;;</span>
-<span class="fc" id="L102">        } catch (Exception e) {</span>
-<span class="fc" id="L103">            model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
-<span class="fc" id="L104">            return &quot;error&quot;;</span>
+<span class="fc" id="L93">            CurvePoint curvePoint = curvePointService.getCurvePointById(id);</span>
+<span class="fc" id="L94">            curvePointService.deleteCurvePoint(curvePoint);</span>
+<span class="fc" id="L95">            logger.info(&quot;CurvePoint has been deleted&quot;);</span>
+<span class="fc" id="L96">            return &quot;redirect:/curvePoint/list&quot;;</span>
+<span class="fc" id="L97">        } catch (Exception e) {</span>
+<span class="fc" id="L98">            model.addAttribute(&quot;errorMsg&quot;, e.getMessage());</span>
+<span class="fc" id="L99">            return &quot;error&quot;;</span>
         }
     }
 }

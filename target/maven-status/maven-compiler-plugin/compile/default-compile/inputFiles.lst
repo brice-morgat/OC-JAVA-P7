@@ -1,4 +1,5 @@
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\IBidService.java
+C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\impl\RatingServiceImpl.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\BidListController.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\HomeController.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\User.java
@@ -13,6 +14,7 @@ C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\Application.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\CurveController.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\UserRepository.java
+C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\IRatingService.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\RatingController.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\ICurvePointService.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\CurvePoint.java
