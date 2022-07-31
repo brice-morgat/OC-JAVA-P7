@@ -19,5 +19,6 @@ C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\Rating.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\RatingRepository.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\UserController.java
+C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\exceptions\InvalidInputException.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\Trade.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\LoginController.java

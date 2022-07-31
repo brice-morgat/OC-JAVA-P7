@@ -29,7 +29,9 @@ public class BidList {
     @SequenceGenerator(name = "bidlist_gen", sequenceName = "bidlist_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "bidlist_gen")
     private Integer BidListId;
+    @NotBlank(message = "Account is mandatory")
     private String account;
+    @NotBlank(message = "Type is mandatory")
     private String type;
     private Double bidQuantity;
     private Double askEntity;
