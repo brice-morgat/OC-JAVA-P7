@@ -12,7 +12,9 @@ C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\domain\Trade.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\LoginController.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\CurvePointRepository.java
+C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\IUserService.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\Application.java
+C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\impl\UserServiceImpl.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\controllers\CurveController.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\services\impl\RuleNameServiceImpl.java
 C:\Users\ooBri\3D Objects\#Openclassroom\Projet\OC-JAVA-P7\Poseiden-skeleton\src\main\java\com\nnk\springboot\repositories\UserRepository.java
