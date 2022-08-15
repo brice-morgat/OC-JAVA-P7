@@ -37,11 +37,7 @@ import java.util.Objects;
 
     @Override
     public RuleName getRuleNameById(Integer id) {
-<span class="fc" id="L40">        RuleName ruleName = ruleNameRepository.getById(id);</span>
-<span class="pc bpc" id="L41" title="1 of 2 branches missed.">        if (ruleName != null) {</span>
-<span class="fc" id="L42">            return ruleName;</span>
-        }
-<span class="nc" id="L44">        throw new InvalidInputException(&quot;RuleName not Found&quot;);</span>
+<span class="fc" id="L40">        return ruleNameRepository.getById(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

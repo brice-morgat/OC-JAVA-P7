@@ -1,9 +1,12 @@
 package com.nnk.springboot.domain;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
+@ToString
 @Table(name = "users")
 public class User {
     @Id

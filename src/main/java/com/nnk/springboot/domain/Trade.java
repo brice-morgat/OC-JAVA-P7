@@ -4,10 +4,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 @Entity
@@ -22,6 +24,7 @@ public class Trade {
     @SequenceGenerator(name = "trade_gen", sequenceName = "trade_id_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "trade_gen")
     private Integer tradeId;
+    @NotBlank(message = "Account is mandatory")
     private String account;
     private String type;
     private Double buyQuantity;

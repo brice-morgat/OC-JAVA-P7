@@ -5,7 +5,6 @@ import com.nnk.springboot.domain.RuleName;
 import java.util.List;
 
 public interface IRuleNameService {
-
     /**
      * Save a rule.
      *

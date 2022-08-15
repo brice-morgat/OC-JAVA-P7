@@ -39,10 +39,6 @@ public class CurvePointServiceImpl implements ICurvePointService {
 
     @Override
     public CurvePoint getCurvePointById(Integer id) {
-        CurvePoint curvePoint = curvePointRepository.getById(id);
-        if (curvePoint != null) {
-            return curvePoint;
-        }
-        throw new InvalidInputException("CurvePoint not Found");
+        return curvePointRepository.getById(id);
     }
 }

@@ -37,10 +37,6 @@ public class RuleNameServiceImpl implements IRuleNameService {
 
     @Override
     public RuleName getRuleNameById(Integer id) {
-        RuleName ruleName = ruleNameRepository.getById(id);
-        if (ruleName != null) {
-            return ruleName;
-        }
-        throw new InvalidInputException("RuleName not Found");
+        return ruleNameRepository.getById(id);
     }
 }

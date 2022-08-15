@@ -39,11 +39,7 @@ import java.util.Objects;
 
     @Override
     public CurvePoint getCurvePointById(Integer id) {
-<span class="fc" id="L42">        CurvePoint curvePoint = curvePointRepository.getById(id);</span>
-<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if (curvePoint != null) {</span>
-<span class="fc" id="L44">            return curvePoint;</span>
-        }
-<span class="nc" id="L46">        throw new InvalidInputException(&quot;CurvePoint not Found&quot;);</span>
+<span class="fc" id="L42">        return curvePointRepository.getById(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

@@ -115,9 +115,13 @@ public class BidListServiceIT {
 
     @Test
     public void getBidListByIdTest() {
-        //Given
-        BidList bidList = new BidList("account", "type", 1d);
         //Then
        assertDoesNotThrow(() -> bidService.getBidListById(1));
+    }
+
+    @Test
+    public void getBidListByIdNotFoundErrorTest() {
+        //Then
+        assertDoesNotThrow(() -> bidService.getBidListById(30));
     }
 }
