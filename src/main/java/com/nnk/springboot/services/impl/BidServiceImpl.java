@@ -38,10 +38,6 @@ public class BidServiceImpl implements IBidService {
 
     @Override
     public BidList getBidListById(Integer id) {
-        BidList bidList = bidListRepository.getById(id);
-        if (bidList != null) {
-            return bidList;
-        }
-        throw new InvalidInputException("BidList not Found");
+        return bidListRepository.getById(id);
     }
 }

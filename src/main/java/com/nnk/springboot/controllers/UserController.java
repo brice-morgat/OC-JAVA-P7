@@ -30,7 +30,7 @@ public class UserController {
     public String home(Model model)
     {
         logger.debug("User List page");
-        model.addAttribute("user", userService.getAllUser());
+        model.addAttribute("users", userService.getAllUser());
         logger.info("user's List getted");
         return "user/list";
     }
@@ -46,8 +46,8 @@ public class UserController {
         logger.debug("Add a User");
         if (!result.hasErrors()) {
             try {
-                BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-                user.setPassword(encoder.encode(user.getPassword()));
+//                BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+//                user.setPassword(encoder.encode(user.getPassword()));
                 userService.saveUser(user);
                 logger.info("User has been saved");
                 return "redirect:/user/list";
@@ -80,8 +80,8 @@ public class UserController {
         logger.debug("Update User");
         if (!result.hasErrors()) {
             try {
-                BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-                user.setPassword(encoder.encode(user.getPassword()));
+//                BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+//                user.setPassword(encoder.encode(user.getPassword()));
                 user.setId(id);
                 userService.saveUser(user);
                 logger.info("User has been updated");
@@ -107,6 +107,11 @@ public class UserController {
             model.addAttribute("errorMsg", e.getMessage());
             return "error";
         }
+    }
+
+    @GetMapping("/login")
+    public String loginPage() {
+        return "login";
     }
 //    @Autowired
 //    private IUserService userService;

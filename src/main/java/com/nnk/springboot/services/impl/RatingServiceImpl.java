@@ -38,10 +38,6 @@ public class RatingServiceImpl implements IRatingService {
 
     @Override
     public Rating getRatingById(Integer id) {
-        Rating rating = ratingRepository.getById(id);
-        if (rating != null) {
-            return rating;
-        }
-        throw new InvalidInputException("Rating not Found");
+        return ratingRepository.getById(id);
     }
 }

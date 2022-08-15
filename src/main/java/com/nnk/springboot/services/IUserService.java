@@ -1,10 +1,11 @@
 package com.nnk.springboot.services;
 
 import com.nnk.springboot.domain.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-public interface IUserService {
+public interface IUserService extends UserDetailsService {
 
     /**
      * Save a user to the database.

@@ -4,48 +4,51 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 @Entity
 @Getter
-<span class="pc" id="L15">@Setter</span>
-<span class="nc" id="L16">@ToString</span>
-<span class="fc" id="L17">@NoArgsConstructor</span>
+<span class="pc" id="L17">@Setter</span>
+<span class="fc" id="L18">@ToString</span>
+<span class="fc" id="L19">@NoArgsConstructor</span>
 @Table(name = &quot;trade&quot;)
 public class Trade {
     // TODO: Map columns in data table TRADE with corresponding java fields
     @Id
     @SequenceGenerator(name = &quot;trade_gen&quot;, sequenceName = &quot;trade_id_seq&quot;, allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = &quot;trade_gen&quot;)
-<span class="fc" id="L24">    private Integer tradeId;</span>
-<span class="fc" id="L25">    private String account;</span>
-<span class="nc" id="L26">    private String type;</span>
-<span class="nc" id="L27">    private Double buyQuantity;</span>
-<span class="nc" id="L28">    private Double sellQuantity;</span>
-<span class="nc" id="L29">    private Double buyPrice;</span>
-<span class="nc" id="L30">    private Double sellPrice;</span>
-<span class="nc" id="L31">    private String benchmark;</span>
-<span class="nc" id="L32">    private Timestamp tradeDate;</span>
-<span class="nc" id="L33">    private String security;</span>
-<span class="nc" id="L34">    private String status;</span>
-<span class="nc" id="L35">    private String trader;</span>
-<span class="nc" id="L36">    private String book;</span>
-<span class="nc" id="L37">    private String creationName;</span>
-<span class="nc" id="L38">    private Timestamp creationDate;</span>
-<span class="nc" id="L39">    private String revisionName;</span>
-<span class="nc" id="L40">    private Timestamp revisionDate;</span>
-<span class="nc" id="L41">    private String dealName;</span>
-<span class="nc" id="L42">    private String dealType;</span>
-<span class="nc" id="L43">    private String sourceListId;</span>
-<span class="nc" id="L44">    private String side;</span>
+<span class="fc" id="L26">    private Integer tradeId;</span>
+    @NotBlank(message = &quot;Account is mandatory&quot;)
+<span class="fc" id="L28">    private String account;</span>
+<span class="fc" id="L29">    private String type;</span>
+<span class="fc" id="L30">    private Double buyQuantity;</span>
+<span class="fc" id="L31">    private Double sellQuantity;</span>
+<span class="fc" id="L32">    private Double buyPrice;</span>
+<span class="fc" id="L33">    private Double sellPrice;</span>
+<span class="fc" id="L34">    private String benchmark;</span>
+<span class="fc" id="L35">    private Timestamp tradeDate;</span>
+<span class="fc" id="L36">    private String security;</span>
+<span class="fc" id="L37">    private String status;</span>
+<span class="fc" id="L38">    private String trader;</span>
+<span class="fc" id="L39">    private String book;</span>
+<span class="fc" id="L40">    private String creationName;</span>
+<span class="fc" id="L41">    private Timestamp creationDate;</span>
+<span class="fc" id="L42">    private String revisionName;</span>
+<span class="fc" id="L43">    private Timestamp revisionDate;</span>
+<span class="fc" id="L44">    private String dealName;</span>
+<span class="fc" id="L45">    private String dealType;</span>
+<span class="fc" id="L46">    private String sourceListId;</span>
+<span class="fc" id="L47">    private String side;</span>
 
-<span class="fc" id="L46">    public Trade(String account, String type) {</span>
-<span class="fc" id="L47">        this.account = account;</span>
-<span class="fc" id="L48">        this.type = type;</span>
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L49">    public Trade(String account, String type) {</span>
+<span class="fc" id="L50">        this.account = account;</span>
+<span class="fc" id="L51">        this.type = type;</span>
+<span class="fc" id="L52">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
