@@ -27,3 +27,5 @@ t
 Dsrc/main/java/com/nnk/springboot/services/impl/TradeServiceImpl.java,f\0\f090ad05ca8fe8545ff5c893fc72d4c8178dca9f
 k
 ;src/main/java/com/nnk/springboot/services/IUserService.java,3\7\37c420c9bbb7f870faaeb49114c82ad9ed06fcce
+m
+=src/main/java/com/nnk/springboot/security/SecurityConfig.java,b\3\b3ba221783120782abe071225b57aa652bfb0cd9
